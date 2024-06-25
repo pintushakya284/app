@@ -83,42 +83,16 @@ WSGI_APPLICATION = 'khanaprj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-        
-        
-#     }
-# }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'data',  # Replace with your database name
-#         'USER': 'root',  # Replace with your database user
-#         'PASSWORD': 'Shambhu@123',   # Replace with your database password
-#         'HOST': '35.238.254.160',      # Use the public IP address provided
-#         'PORT': '3306',                # Default MySQL port
-#     }
-# }
-
-
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'khanadotcomdb',
         'USER': 'khana',
         'PASSWORD': 'Admin@123',
-        'HOST': 'khanadotcom.mysql.database.azure.com',   # Or an IP Address that your DB is hosted on
-        'PORT':'3306',
+        'HOST': 'khanadotcom.mysql.database.azure.com',
+        'PORT': '3306',
+    }
 }
-}
-
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -154,11 +128,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Media files (Uploaded Files)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
